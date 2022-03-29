@@ -2,6 +2,7 @@
 
 ## Funcionalidades 
 - Calcula e apresenta o IMC.
+- Apresenta a sua faixa de IMC
 
 ## Tecnologias utilizadas 
 
