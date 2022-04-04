@@ -9,15 +9,15 @@ namespace CalculadoraIMC
             Console.WriteLine("Qual é o seu nome?");
             string nome = Console.ReadLine();
 
-            Console.WriteLine("Qual é a sua altura em metros? Ex. 1,65");
+            Console.WriteLine("Qual é a sua altura em metros? Ex. 1.65");
             float altura = Convert.ToSingle(Console.ReadLine());
 
-            Console.WriteLine("Qual o seu peso em Kg? Ex: 70,3");
+            Console.WriteLine("Qual o seu peso em Kg? Ex: 70.3");
             float peso = Convert.ToSingle(Console.ReadLine());
 
             double imc = Math.Round(peso / (altura * altura), 2);
 
-            Console.WriteLine("Seu IMC é "+ imc);
+            Console.WriteLine("Seu IMC é {0}", imc);
 
             if (imc < 17)
             {
@@ -48,6 +48,21 @@ namespace CalculadoraIMC
                 Console.WriteLine("Obesidade III(mórbida)");
             }
 
+            if(imc < 18.50)
+            {
+                double pesoIdeal = 18.50;
+                double pesoNecessario = Math.Round(pesoIdeal - imc, 2);
+
+                Console.WriteLine("Você precisa ganhar {0}Kg", pesoNecessario);
+            }
+
+            else if(imc >= 25)
+            {
+                double pesoIdeal = 24.99;
+                double pesoNecessario = Math.Round(imc - pesoIdeal, 2);
+
+                Console.WriteLine("Você precisa perder {0}Kg", pesoNecessario);
+            }   
         }
     }
 }
